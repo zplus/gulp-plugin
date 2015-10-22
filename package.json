@@ -1,0 +1,20 @@
+{
+  "name": "file-include",
+  "version": "1.0.0",
+  "description": "测试",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zplus",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.9.11",
+    "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-file-include": "^0.13.7",
+    "gulp-load-plugins": "^1.0.0",
+    "gulp-px3rem": "^0.2.2",
+    "gulp-sass": "^2.0.4"
+  }
+}
