@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>processhtml</title>
+</head>
+<!-- build:[class]:dist production -->
+<body class="debug_mode">
+<!-- /build -->
+
+<!-- build:[href] img/ -->
+<link rel="apple-touch-icon-precomposed" href="skins/demo/img/icon.png">
+<link rel="apple-touch-icon-precomposed" href="skins/demo/img/icon-72x72.png" sizes="72x72">
+<!-- /build -->
+
+<!-- If only a path is used, the original file name will remain -->
+<!-- build:[src] js/ -->
+<script src="my/lib/path/lib.js"></script>
+<script src="my/deep/development/path/script.js"></script>
+<!-- /build -->
+
+<!-- build:js inline js/main.min.js -->
+<script src="js/test.js"></script>
+<!-- /build -->
+
+<!-- build:remove -->
+<script src="http://192.168.0.1:35729/livereload.js?snipver=1"></script>
+<!-- /build -->
+
+<!-- build:replace 'Goodbye Livereload...' -->
+<script src="http://192.168.0.1:35729/livereload.js?snipver=1"></script>
+<!-- /build -->
+
+<!-- build:include about.html -->
+This will be replaced by the content of about.html
+<!-- /build -->
+<pre>
+grunt.initConfig({
+  processhtml: {
+    options: {
+      data: {
+        message: 'Hello world!'
+      }
+    },
+    dist: {
+      files: {
+        'dest/index.html': ['index.html']
+      }
+    }
+  }
+});
+</pre>
+</body>
+</html>

@@ -1,0 +1,21 @@
+### plugins
+* "browser-sync": "^2.9.11",
+* "gulp": "^3.9.0",
+* "gulp-autoprefixer": "^3.1.0",
+* "gulp-cache": "^0.3.0",
+* "gulp-clean": "^0.3.1",
+* "gulp-concat": "^2.6.0",
+* "gulp-file-include": "^0.13.7",
+* "gulp-htmlmin": "^1.2.0",
+* "gulp-imagemin": "^2.3.0",
+* "gulp-jshint": "^1.11.2",
+* "gulp-load-plugins": "^1.0.0",
+* "gulp-minify-css": "^1.2.1",
+* "gulp-notify": "^2.2.0",
+* "gulp-processhtml": "^1.1.0",
+* "gulp-px3rem": "^0.2.2",
+* "gulp-rename": "^1.2.2",
+* "gulp-sass": "^2.0.4",
+* ["gulp-strip-debug"](https://www.npmjs.com/package/gulp-strip-debug):Strip console and debugger statements from JavaScript code
+* "gulp-uglify": "^1.4.2",
+* "gulp-utf8-convert": "0.0.7"
