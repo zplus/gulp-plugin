@@ -43,7 +43,7 @@ gulp.task('html', ['clean-html'], function () {
         minifyJS: true, // 压缩页面JS
         minifyCSS: true // 压缩页面CSS
     };
-    return gulp.src(paths.html, {base: './'})
+    return gulp.src(paths.html)
         .pipe(plugins.utf8Convert())
         .pipe(plugins.fileInclude({
             prefix: '@@'
@@ -52,11 +52,10 @@ gulp.task('html', ['clean-html'], function () {
                 name: 'test'
             }
         }))
-        .pipe(gulp.dest(buildPath, {cwd: ''}))
+        .pipe(gulp.dest(buildPath))
         .pipe(plugins.processhtml())
-
         // revCollector
-        /* todo
+        /*
          .pipe(plugins.revCollector({
          replaceReved: true
          }))
@@ -150,7 +149,7 @@ gulp.task('browser-sync', function () {
 
     plugins.browserSync.init(files, {
         server: {
-            baseDir: './dist'
+            baseDir: 'dist'
         }
     });
 });
@@ -164,4 +163,4 @@ gulp.task('watch', function () {
     gulp.watch(paths.html, ['html']);
 });
 
-gulp.task('default', ['browser-sync', 'watch', 'css', 'js', 'html', 'img']);
+gulp.task('default', ['browser-sync', 'watch', 'css', 'js', 'img', 'html']);
