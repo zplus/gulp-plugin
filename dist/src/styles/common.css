@@ -36,3 +36,23 @@ nav li.active a {
 [data-dpr="4"] {
   font-size: 150px;
 }
+
+.icon-1 {
+  background: url("../images/1.png");
+}
+
+.icon-2 {
+  background: url("../images/2.png");
+}
+
+.icon-3 {
+  background: url("../images/3.png");
+}
+
+.icon-4 {
+  background: url("../images/4.png");
+}
+
+.icon-4 {
+  background: url("../images/5.png");
+}

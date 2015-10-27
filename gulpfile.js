@@ -2,6 +2,7 @@ var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')();
 plugins.browserSync = require('browser-sync');
 plugins.sass = require('gulp-sass');
+plugins.makeUrlVer = require('gulp-make-css-url-version');
 
 var basePath = 'src/';
 var buildPath = 'dist/';
@@ -22,7 +23,7 @@ var paths = {
 // todo
 // html: 公用模块模版
 // js,css sourceMap
-// img optimize
+// footer
 
 /*******************************************************
  * html
@@ -61,8 +62,7 @@ gulp.task('html', ['clean-html'], function () {
          }))
          */
         .pipe(plugins.htmlmin(options))
-        .pipe(gulp.dest(buildPath))
-        .pipe(plugins.notify({message: 'Html task complete'}));
+        .pipe(gulp.dest(buildPath));
 });
 
 /*******************************************************
@@ -82,9 +82,9 @@ gulp.task('css', ['clean-css'], function () {
         .pipe(gulp.dest(buildPath + basePath + 'styles/'))
         .pipe(plugins.concat('main.css'))
         .pipe(plugins.rename({suffix: '.min'}))
-        .pipe(plugins.minifyCss())
-        .pipe(gulp.dest(buildPath + basePath + 'css/'))
-        .pipe(plugins.notify({message: 'sass task complete'}));
+        .pipe(plugins.makeUrlVer())
+        .pipe(plugins.minifyCss({"compatibility": "ie7"}))
+        .pipe(gulp.dest(buildPath + basePath + 'css/'));
 });
 
 /*******************************************************
@@ -102,11 +102,15 @@ gulp.task('js', ['clean-js'], function () {
         .pipe(plugins.rename({suffix: '.min'}))
         .pipe(plugins.stripDebug())
         .pipe(plugins.uglify())
-        .pipe(gulp.dest(buildPath + basePath + 'js/'))
-        .pipe(plugins.notify({message: 'js task complete'}));
+        .pipe(gulp.dest(buildPath + basePath + 'js/'));
 });
 
 
+/*******************************************************
+ * img
+ * +++++++++++++++++++++++ BUG ++++++++++++++++++++++++
+ * It's a bug with jpeg images
+ ******************************************************/
 gulp.task('img', function () {
     return gulp.src(paths.img, {base: './'})
         .pipe(plugins.cache(plugins.imagemin({
@@ -116,8 +120,16 @@ gulp.task('img', function () {
             , multipass: true //类型：Boolean 默认：false 多次优化svg直到完全优化
             , svgoPlugins: [{removeViewBox: false}]//不要移除svg的viewbox属性
         })))
-        .pipe(gulp.dest(buildPath), {cwd: ''})
-        .pipe(plugins.notify({message: 'Images task complete'}));
+        .pipe(gulp.dest(buildPath), {cwd: ''});
+});
+
+
+/*******************************************************
+ * 保留hbs模板文件 todo
+ ******************************************************/
+gulp.task('hbs', function () {
+    gulp.src('views/**/*.hbs').pipe(gulp.dest('public/views'));
+    gulp.src('components/**/*.hbs').pipe(gulp.dest('public/components'));
 });
 
 gulp.task('clear', function (done) {

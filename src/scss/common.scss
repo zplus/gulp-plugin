@@ -9,14 +9,14 @@ $font-size: 15px;
   [data-dpr="2.5"] #{$name} {
     font-size: round($px * 2.5 / 2) * 1px;
     }
-  // for Ð¡Ã×note
+  // for Ð¡ï¿½ï¿½note
   [data-dpr="2.75"] #{$name} {
     font-size: round($px * 2.75 / 2) * 1px;
     }
   [data-dpr="3"] #{$name} {
     font-size: round($px / 2 * 3) * 1px
     }
-  // for ÈýÐÇnote4
+  // for ï¿½ï¿½ï¿½ï¿½note4
   [data-dpr="4"] #{$name} {
     font-size: $px * 2px;
     }
@@ -29,4 +29,8 @@ ul { list-style: none; margin: 0; padding: 0; }
 nav li a { color: #333; }
 nav li.active a { color: $link-color; }
 @include px2px('', 75);
-
+.icon-1 { background: url("../images/1.png"); }
+.icon-2 { background: url("../images/2.png"); }
+.icon-3 { background: url("../images/3.png"); }
+.icon-4 { background: url("../images/4.png"); }
+.icon-4 { background: url("../images/5.png"); }

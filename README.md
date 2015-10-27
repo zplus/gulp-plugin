@@ -1,21 +1,37 @@
+### 安装步骤
+1. 选装cnpm,命令提示符执行：`npm install cnpm -g --registry=https://registry.npm.taobao.org` 官方网址：http://npm.taobao.org
+2. 全局安装gulp.使用命令：`cnpm install gulp -g`，安装后使用`gulp -v`查看版本号
+3. 新建package.json文件，推荐使用命令来配置，命令提示符执行：`cnpm init`
+4.本地安装gulp插件 `cnpm install --save-dev gulp`
+
 ### plugins
-* "browser-sync": "^2.9.11",
-* "gulp": "^3.9.0",
-* "gulp-autoprefixer": "^3.1.0",
-* "gulp-cache": "^0.3.0",
-* "gulp-clean": "^0.3.1",
-* "gulp-concat": "^2.6.0",
-* "gulp-file-include": "^0.13.7",
-* "gulp-htmlmin": "^1.2.0",
-* "gulp-imagemin": "^2.3.0",
-* "gulp-jshint": "^1.11.2",
-* "gulp-load-plugins": "^1.0.0",
-* "gulp-minify-css": "^1.2.1",
-* "gulp-notify": "^2.2.0",
-* "gulp-processhtml": "^1.1.0",
-* "gulp-px3rem": "^0.2.2",
-* "gulp-rename": "^1.2.2",
-* "gulp-sass": "^2.0.4",
-* ["gulp-strip-debug"](https://www.npmjs.com/package/gulp-strip-debug):Strip console and debugger statements from JavaScript code
-* "gulp-uglify": "^1.4.2",
-* "gulp-utf8-convert": "0.0.7"
+* [browser-sync](http://www.browsersync.io/docs/gulp/)
+* [gulp-autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer)
+* [gulp-cache](https://www.npmjs.com/package/gulp-cache)
+* [gulp-clean](https://www.npmjs.com/package/gulp-clean)
+* [gulp-concat](https://www.npmjs.com/package/gulp-concat)
+* [gulp-file-include](https://www.npmjs.com/package/gulp-file-include)
+* [gulp-htmlmin](https://www.npmjs.com/package/gulp-htmlmin)
+* [gulp-jshint](https://www.npmjs.com/package/gulp-jshint)
+* [gulp-load-plugins](https://www.npmjs.com/package/gulp-load-plugins)
+* [gulp-make-css-url-version](https://www.npmjs.com/package/gulp-make-css-url-version)
+* [gulp-minify-css](https://www.npmjs.com/package/gulp-minify-css)
+* [gulp-processhtml](https://www.npmjs.com/package/gulp-processhtml)
+* [gulp-px3rem](https://www.npmjs.com/package/gulp-px3rem)
+* [gulp-rename](https://www.npmjs.com/package/gulp-rename)
+* [gulp-sass](https://www.npmjs.com/package/gulp-sass)
+* [gulp-strip-debug](https://www.npmjs.com/package/gulp-strip-debug)
+* [gulp-uglify](https://www.npmjs.com/package/gulp-uglify)
+
+
+* [gulp-notify](https://www.npmjs.com/package/gulp-notify)
+* [gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin)
+* [gulp-imageisux]()
+* [gulp-utf8-convert](https://www.npmjs.com/package/gulp-utf8-convert)
+
+### 参考网址
+* http://www.gulpjs.com.cn/
+* [使用gulp进行web模块化开发
+](http://hao0.me/web/2015/01/14/gulp-build.html)
+* [自定义前端构建工具生成器 generator-pg-cloud
+](http://segmentfault.com/a/1190000002914726)
